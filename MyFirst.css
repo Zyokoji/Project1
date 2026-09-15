@@ -1,4 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Used AI Here for font family and line height*/
 body {
-  background-color: black;
-  color: white;
+    background-color: #0f111a;
+    color: #e6e6e6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header & Flexbox Navigation. Used AI to write it then i just changed some things but mostly ai on this one */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #181b29;
+    border-bottom: 2px solid #00f0ff;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #00f0ff;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #ff007f;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Pop Cards */
+.card {
+    background: #181b29;
+    border: 1px solid #2a2f45;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #00f0ff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #202436;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.badge {
+    background: #ff007f;
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Expand */
+.card-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease, padding 0.3s ease;
+    padding: 0 20px;
+}
+
+.card.active .card-content {
+    max-height: 800px; 
+    opacity: 1;
+    padding: 20px;
+    border-top: 1px solid #2a2f45;
+}
+
+.card.active .badge {
+    background: #00f0ff;
+    color: #0f111a;
+}
+
+.card-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #2a2f45;
+}
+
+.card-content ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.card-content li {
+    margin-bottom: 8px;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #6c7293;
+    font-size: 0.9rem;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
